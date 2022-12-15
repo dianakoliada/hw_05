@@ -10,6 +10,71 @@
 
 <body>
    <script>
+      //1. 
+
+      let arr = [];
+      function fillArray(a, b) {
+         arr.length = a;
+         for (let i = 0; i < arr.length; i++) {
+            arr[i] = b;
+         }
+         return arr;
+      };
+      console.log(fillArray(10, 'querty'));
+
+
+      //2.
+
+      let array = [0, 1, 2, null, undefined, 'qwerty', false];
+      function filterArray(a, b, c, d) {
+         for (let i = 0; i < array.length; i++) {
+            if (array[i] !== a && array[i] !== b && array[i] !== c && array[i] !== d) {
+               console.log(array[i]);
+            }
+         }
+      }
+      filterArray(false, undefined, 0, null);
+
+
+      //3.
+
+      let sum1 = calcSum(0); // 0
+      let sum2 = calcSum(1, 2, 3); // 6
+      let sum3 = calcSum(5, 0, 10, 1, 5); // 21
+
+      function calcSum(a, ...args) {
+         let result = a;
+         for (let arg of args) {
+            result = result + arg;
+         }
+         console.log(`Result : ${result}`);
+         return result;
+      }
+
+
+      //4.
+
+      function createPipe(x) { // some text
+         return function (y) { // =====
+            return y + x + y;
+         }
+      }
+      const pipeFunction = createPipe(prompt('Write some text'));
+      result = pipeFunction(' ====== ');
+      console.log(result);
+
+
+      //5.
+
+      function makeFunction(text, outputText) {
+         return makeFunction => `${text} ${outputText}`;
+      }
+
+      let text = 'Some text';
+      let outputText = makeFunction(alert(text));
+
+      console.log(text);
+
 
    </script>
 </body>
