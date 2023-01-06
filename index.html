@@ -23,17 +23,31 @@
       console.log(fillArray(10, 'querty'));
 
 
-      //2.
+       //2.
+       let array = [0, 1, 2, null, undefined, 'qwerty', false];
+       (false, undefined, '', 0, null)
+       function filterArray(existingArray, ...args) {
+         for (let i = 0; i < existingArray.length; i++) {
+            for (let key = 0; key < args.length; key++) {
+               if (args[key] === existingArray[i]) {
+                  existingArray.splice(i, 1);
+               }
+            };
+         };
+         return existingArray;
+       };
 
-      let array = [0, 1, 2, null, undefined, 'qwerty', false];
-      function filterArray(a, b, c, d) {
-         for (let i = 0; i < array.length; i++) {
-            if (array[i] !== a && array[i] !== b && array[i] !== c && array[i] !== d) {
-               console.log(array[i]);
-            }
-         }
-      }
-      filterArray(false, undefined, 0, null);
+       console.log(filterArray(array, null, undefined, false, 0));
+
+      // let array = [0, 1, 2, null, undefined, 'qwerty', false];
+      // function filterArray(a, b, c, d) {
+      //    for (let i = 0; i < array.length; i++) {
+      //       if (array[i] !== a && array[i] !== b && array[i] !== c && array[i] !== d) {
+      //          console.log(array[i]);
+      //       }
+      //    }
+      // }
+      // filterArray(false, undefined, 0, null);
 
 
       //3.
